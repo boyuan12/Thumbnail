@@ -1,0 +1,1 @@
+web: gunicorn Thumbnail.wsgi —-log-file -
