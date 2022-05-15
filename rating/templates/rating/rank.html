@@ -1,0 +1,18 @@
+{% extends "rating/base.html" %}
+
+{% block title %}
+    Ranking
+{% endblock %}
+
+{% block main %}
+    <h1>Rankings</h1>
+    {% for t in thumbnails %}
+        <figure class="figure">
+            <img src="{{ t.img_url }}" class="figure-img img-fluid rounded" alt="..." width="25%" height="25%">
+            <figcaption class="figure-caption">
+                {{ t.title }}
+            </figcaption>
+            <span class="badge text-bg-info">{{ t.rating }}</span>
+        </figure>        
+    {% endfor %}
+{% endblock %}

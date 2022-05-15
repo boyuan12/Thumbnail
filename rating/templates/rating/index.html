@@ -1,0 +1,33 @@
+{% extends "rating/base.html" %}
+
+{% block title %}
+    Rate Thumbnails
+{% endblock %} 
+
+{% block main %}
+    <style>
+        button {
+            background-color: white;
+            border: none;
+        }
+    </style>
+    <h1>Pick which thumbnail you would click on</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="winner" value="{{ thumb1.id }}">
+        <input type="hidden" name="loser" value="{{ thumb2.id }}">
+        <button type="submit">
+            <img src="{{ thumb1.img_url }}" width="50%" height="50%">
+        </button>
+    </form>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="winner" value="{{ thumb2.id }}">
+        <input type="hidden" name="loser" value="{{ thumb1.id }}">
+
+        <button type="submit">
+            <img src="{{ thumb2.img_url }}" width="50%" height="50%">
+        </button>
+    </form>
+{% endblock %}

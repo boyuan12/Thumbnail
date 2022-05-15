@@ -1,0 +1,24 @@
+{% extends "rating/base.html" %}
+
+{% block title %}
+    Add Video
+{% endblock %}
+
+{% block main %}
+    <h1>Add Videos</h1>
+    <h3>Add YouTube Video</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="option" value="youtube">
+        <input type="url" name="youtube_url" placeholder="YouTube URL">
+        <button type="submit">Submit</button>
+    </form>
+    <h3>Add Custom Thumbnail</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="option" value="custom">
+        <input type="url" name="img_url" placeholder="Thumbnail URL">
+        <input type="text" name="title" placeholder="Title">
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
