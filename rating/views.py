@@ -2,11 +2,11 @@ from django.http import HttpRequest, JsonResponse, HttpResponse
 from django.shortcuts import redirect, render
 from .models import Thumbnail, Round
 import random
-
+import os
 import base64
 import requests
 
-IMGUR_CLIENT_ID = "866290377e7c231"
+IMGUR_CLIENT_ID = os.getenv("IMGUR_CLIENT_ID")
 
 # Create your views here.
 def index(request):
