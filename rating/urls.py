@@ -5,5 +5,6 @@ urlpatterns = [
     path("upload/", views.upload_image),
     path("add/", views.add_thumbnail),
     path("rank/", views.rankings),
-    path("", views.index)
+    path("delete/<int:thumb_id>/", views.delete_thumbnail),
+    path("", views.index),
 ]

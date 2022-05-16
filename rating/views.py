@@ -104,3 +104,7 @@ def rating_calc(winner_rating, loser_rating):
     print(Rwinner, Rloser)
 
     return (Rwinner, Rloser)
+
+def delete_thumbnail(request, thumb_id):
+    Thumbnail.objects.get(id=thumb_id).delete()
+    return redirect("/rank")
