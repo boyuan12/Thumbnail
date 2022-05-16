@@ -13,6 +13,9 @@
                 {{ t.title }}
             </figcaption>
             <span class="badge text-bg-info">{{ t.rating }}</span>
+            <span class="badge text-bg-danger">
+                <a href="/delete/{{ t.id }}">delete</a>
+            </span>
         </figure>        
     {% endfor %}
 {% endblock %}
